@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Result</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/style.css') }}">
+</head>
+<body>
+    <div class="container">
+        <h1>Analysis Result</h1>
+        <div class="result-box">
+            <!-- Show the uploaded image -->
+            <img src="{{ url_for('static', filename='uploads/' + filename) }}" 
+                 alt="Uploaded Image">
+
+            <!-- Display the severity level and confidence -->
+            <div class="diagnosis">
+                <h2>Severity Level: {{ severity }}</h2>
+                <p>Confidence: {{ "%.2f"|format(confidence) }}%</p>
+                <div class="severity-scale">
+                    <div class="level" style="--level:0">0 - No DR</div>
+                    <div class="level" style="--level:1">1 - Mild</div>
+                    <div class="level" style="--level:2">2 - Moderate</div>
+                    <div class="level" style="--level:3">3 - Severe</div>
+                    <div class="level" style="--level:4">4 - Proliferative</div>
+                </div>
+            </div>
+
+            <!-- Display the message below the severity level -->
+           
+        </div>
+         <div class="message">
+                <p>{{ message }}</p>
+            </div>
+        <a href="/">Analyze Another Image</a>
+    </div>
+</body>
+</html>

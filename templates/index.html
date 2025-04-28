@@ -1,0 +1,18 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Diabetic Retinopathy Detection</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/style.css') }}">
+</head>
+<body>
+    <div class="container">
+        <!-- <img src="{{ url_for('static', filename='img/logo.png') }}"  -->
+        <!-- alt="Uploaded Image"> -->
+        <h1>Retinal Scan Analysis</h1>
+        <form action="/predict" method="POST" enctype="multipart/form-data">
+            <input type="file" name="file" accept="image/*" required>
+            <button type="submit">Analyze</button>
+        </form>
+    </div>
+</body>
+</html>
